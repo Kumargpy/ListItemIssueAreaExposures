@@ -1,0 +1,10 @@
+    
+  <li>{{child.text}}</li>
+	<ng-container *ngIf="child.children?.length > 0">
+		<ul *ngIf="child.childrenType==='unordered-list-item'">
+			<app-recursion *ngFor="let subChild of child.children" [child]="subChild"></app-recursion>
+		</ul>
+    <ol *ngIf="child.childrenType==='ordered-list-item'">
+      <app-recursion *ngFor="let subChild of child.children" [child]="subChild"></app-recursion>
+    </ol>
+	</ng-container>

@@ -1,0 +1,10 @@
+<ng-container *ngIf="nested.type==='unordered-list-item'">
+	<ul *ngIf="nested.children.length > 0">
+		<app-recursion *ngFor="let child of nested.children" [child]="child"></app-recursion>
+	</ul>
+</ng-container>
+<ng-container *ngIf="nested.type==='ordered-list-item'">
+	<ol *ngIf="nested.children.length > 0">
+		<app-recursion *ngFor="let child of nested.children" [child]="child"></app-recursion>
+	</ol>
+</ng-container>
